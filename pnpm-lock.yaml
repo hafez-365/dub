@@ -5,18 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@tiptap/core': ^3.15.3
-  '@tiptap/pm': ^3.15.3
-  '@tiptap/extension-file-handler': ^3.15.3
-  '@tiptap/extension-image': ^3.15.3
-  '@tiptap/extension-link': ^3.15.3
-  '@tiptap/extension-mention': ^3.15.3
-  '@tiptap/extensions': ^3.15.3
-  '@tiptap/markdown': ^3.15.3
-  '@tiptap/react': ^3.15.3
-  '@tiptap/starter-kit': ^3.15.3
-  '@tiptap/html': ^3.15.3
-  '@tiptap/static-renderer': ^3.15.3
+  chrono-node: 2.7.5
 
 importers:
 

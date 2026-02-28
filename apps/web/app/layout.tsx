@@ -1,10 +1,10 @@
-import { geistMono, inter, satoshi } from "@/styles/fonts";
-import "@/styles/globals.css";
-import { cn, constructMetadata } from "@dub/utils";
-import Script from "next/script";
-import RootProviders from "./providers";
+import type { Metadata } from "next";
+import "./globals.css";
 
-export const metadata = constructMetadata();
+export const metadata: Metadata = {
+  title: "Dub - Short Links, Big Impact",
+  description: "Create, manage, and track short links with advanced analytics.",
+};
 
 export default function RootLayout({
   children,
@@ -12,30 +12,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={cn(satoshi.variable, inter.variable, geistMono.variable)}
-    >
-      <body>
-        <RootProviders>{children}</RootProviders>
-
-        <Script id="set-theme" strategy="beforeInteractive">
-          {`
-          (() => {
-            // Only run on referrals embed page for now
-            if (window.location.pathname !== '/embed/referrals') return;
-
-            const urlParams = new URLSearchParams(window.location.search);
-            const theme = urlParams.get('theme');
-
-            if (theme === 'dark' || (theme === 'system' && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-              document.body.classList.add("dark");
-            } else {
-              document.body.classList.remove("dark");
-            }
-          })();
-        `}
-        </Script>
+    <html lang="en">
+      <body style={{ margin: 0, fontFamily: "system-ui, sans-serif" }}>
+        {children}
       </body>
     </html>
   );
